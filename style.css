@@ -13,13 +13,19 @@ body{
 
 .grid{
     display: flex;
+    flex-direction: column;
     height: 500px;
     width: 500px;
     border: 1px solid black;
 }
 
+.row{
+    display: flex;
+    flex: 1;
+}
+
 .square{
-    height: 50px;
+    flex: 1;
     width: 50px;
     margin: 1px;
     background-color: aqua;

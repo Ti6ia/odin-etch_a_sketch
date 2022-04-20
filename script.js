@@ -7,9 +7,13 @@
 
 
 /** creo la variabile che conterrà l'html che devo aggiungere per creare i blocchi (square) */
-let squares = '<div class="square"></div>';
-for(let i=0; i<64; i++){
-    squares += '<div class="square"></div>';
+let squares = '';
+for(let i=0; i<50; i++){
+    squares += '<div class="row">';
+    for(let j=0; j<50; j++){
+        squares += '<div class="square"></div>';
+    }
+    squares += '</div>';
 }
 console.log(squares);
 /** inserisco l'html dentro il div "grid" */
