@@ -1,3 +1,7 @@
+:root{
+    --rainbowColor: #17d375;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -35,12 +39,24 @@ body{
     background-color: red !important;
 }
 
+.rainbow{
+
+}
+
 .bottone{  
     height: 30px;
     width: 100px;
-    border: 2px solid green;
     border-radius: 5px;
+    margin: 8px;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.btnClear{
+    border: 2px solid green;
+}
+
+.btnRainbow{
+    border: 2px solid purple;
 }

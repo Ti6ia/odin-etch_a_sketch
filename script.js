@@ -1,4 +1,4 @@
-/*creo la griglia*/
+/*CREO LA GRIGLIA*/
 let htmlString = '';
 const gridSize = 64;
 
@@ -13,7 +13,7 @@ for(let i=0; i<gridSize; i++){
 document.querySelector(".grid").innerHTML = htmlString;
 
 
-/** utente colora la griglia */
+/** COLORE NORMALE */
 const squares = document.querySelectorAll(".square");
 
 squares.forEach((square) => {
@@ -27,12 +27,29 @@ squares.forEach((square) => {
     });
 });
 
-/** tasto clear */
-const bottone = document.querySelector(".bottone");
+
+/** RAINBOW */
+const btnRainbow = document.querySelector(".btnRainbow");
+const r = document.querySelector(':root');
+const randColor = () =>  {
+    return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+}
+
+function rainbowColorSet(){
+    const rs = getComputedStyle(r);
+    r.style.setProperty('--rainbowColor', '#7817d3');
+    console.log(rs.getPropertyValue('--rainbowColor'))
+}
+
+btnRainbow.addEventListener('click', rainbowColorSet);
+
+
+/** TASTO CLEAR */
+const btnClear = document.querySelector(".btnClear");
 
 function clear(){
     squares.forEach((item) => {item.classList.remove("colored");});   
 }
 
-bottone.addEventListener('click', clear);
+btnClear.addEventListener('click', clear);
 
