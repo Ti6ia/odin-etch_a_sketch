@@ -1,37 +1,38 @@
-/** creo la variabile che conterrà l'html che devo aggiungere per creare i blocchi (square) */
+/*creo la griglia*/
 let htmlString = '';
-/** il ciclo che permette la creazione dell'html per la griglia */
-for(let i=0; i<8; i++){
+const gridSize = 64;
+
+for(let i=0; i<gridSize; i++){
     htmlString += '<div class="row">';
-    for(let j=0; j<8; j++){
+    for(let j=0; j<gridSize; j++){
         htmlString += '<div class="square"></div>';
     }
     htmlString += '</div>';
 }
-/** inserisco l'html dentro il div "grid" */
+
 document.querySelector(".grid").innerHTML = htmlString;
 
 
-/** creo l'array di squares */
+/** utente colora la griglia */
 const squares = document.querySelectorAll(".square");
-/** aggiungo un listener in ogni square che modifica il colore dello sfondo
- *  solo quando il mouse è premuto */
+
 squares.forEach((square) => {
     square.addEventListener('mouseover', (e) => {
         if(e.buttons == 1){
             e.target.classList.add("colored");
         }  
     })
+    square.addEventListener('mousedown', (e) => {
+        e.target.classList.add("colored");
+    });
 });
 
-/** mi prendo il div bottone */
+/** tasto clear */
 const bottone = document.querySelector(".bottone");
-console.log(bottone);
-/** funzione per far tornare gli square bianchi */
+
 function clear(){
-    //squares.forEach((item) => {console.log(item);});
     squares.forEach((item) => {item.classList.remove("colored");});   
 }
-/** aggiungo l'eventListener per togliere la classe */
+
 bottone.addEventListener('click', clear);
 
