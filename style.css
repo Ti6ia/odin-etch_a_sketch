@@ -30,3 +30,17 @@ body{
     /*margin: 1px;*/
     background-color: aqua;
 }
+
+.colored{
+    background-color: red !important;
+}
+
+.bottone{  
+    height: 30px;
+    width: 100px;
+    border: 2px solid green;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
