@@ -1,5 +1,5 @@
 :root{
-    --rainbowColor: #17d375;
+    --epilectorColor: #17d375;
 }
 
 body{
@@ -39,11 +39,11 @@ body{
     background-color: red !important;
 }
 
-.rainbow{
-
+.epilector{
+    background-color: var(--epilectorColor);
 }
 
-.bottone{  
+.button{  
     height: 30px;
     width: 100px;
     border-radius: 5px;
@@ -57,6 +57,18 @@ body{
     border: 2px solid green;
 }
 
+.btnColor{
+    border: 2px solid black;
+}
+
 .btnRainbow{
     border: 2px solid purple;
+}
+
+.btnEpilector{
+    border: 2px solid yellow;
+}
+
+.inUse{
+    background-color: darkorange;
 }
