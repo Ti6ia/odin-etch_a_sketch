@@ -16,6 +16,7 @@ document.querySelector(".grid").innerHTML = htmlString;
 /** COLORARE SQUARES (mk-2)*/
     /** vars */
 const squares = document.querySelectorAll(".square");
+const buttons = document.querySelectorAll(".button");
 const btnColor = document.querySelector(".btnColor");
 const btnRainbow = document.querySelector(".btnRainbow");
 const btnEpilector = document.querySelector(".btnEpilector");
@@ -33,7 +34,6 @@ function epilectorColorSet(){
 }
 
     /** attiva bottone */
-const buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         /** resetto i tasti */
@@ -50,14 +50,17 @@ squares.forEach((square) => {
     square.addEventListener('mouseover', (e) => {
         if(e.buttons == 1){
             if(buttonSelected == "btnColor"){ e.target.classList.add("colored"); }
+            if(buttonSelected == "btnRainbow"){ e.target.style.background = randColor(); }
             if(buttonSelected == "btnEpilector"){ 
                 epilectorColorSet();
                 e.target.classList.add("epilector"); 
             }
+            console.log(e.target.style.background);
         }
     })
     square.addEventListener('mousedown', (e) => {
         if(buttonSelected == "btnColor"){ e.target.classList.add("colored"); }
+        if(buttonSelected == "btnRainbow"){ e.target.style.background = randColor(); }
         if(buttonSelected == "btnEpilector"){ 
             epilectorColorSet();
             e.target.classList.add("epilector"); 
@@ -107,6 +110,7 @@ const btnClear = document.querySelector(".btnClear");
 function clear(){
     squares.forEach((item) => {item.classList.remove("colored");}); 
     squares.forEach((item) => {item.classList.remove("epilector");}); 
+    squares.forEach((item) => {item.style.background = "aqua"}); 
 }
 
 btnClear.addEventListener('click', clear);
