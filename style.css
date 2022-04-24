@@ -1,5 +1,6 @@
 :root{
-    --epilectorColor: #17d375;
+    --gridColor: #ffffff;
+    --epilectorColor: #03a40e;
 }
 
 body{
@@ -32,7 +33,7 @@ body{
     flex: 1;
     width: 50px;
     /*margin: 1px;*/
-    background-color: aqua;
+    background-color: var(--gridColor);
 }
 
 .colored{
